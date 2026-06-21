@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #1a1a18;
+    color: #e8e6e0;
+    font-family: 'Jost', sans-serif;
+}
+
+.details-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 64px 32px;
+}
+
+.details {
+    max-width: 1080px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    gap: 80px;
+    align-items: start;
+}
+
+.details_left {
+    width: 50%;
+    position: sticky;
+    top: 32px;
+    flex-shrink: 0;
+}
+
+.details_left_img {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #232320;
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+.details_left_img::before,
+.details_left_img::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.details_left_img::before {
+    top: 16px;
+    left: 16px;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.35);
+    border-left: 0.5px solid rgba(255, 255, 255, 0.35);
+}
+
+.details_left_img::after {
+    bottom: 16px;
+    right: 16px;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.35);
+    border-right: 0.5px solid rgba(255, 255, 255, 0.35);
+}
+
+.details_left_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.details_left_img:hover img {
+    transform: scale(1.03);
+}
+
+.details_right {
+    flex: 1;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.details-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #666;
+    font-weight: 400;
+    margin-bottom: 16px;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: 0.05s;
+}
+
+.details-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 5vw, 64px);
+    font-weight: 400;
+    color: #e8e6e0;
+    line-height: 1.0;
+    letter-spacing: 0.01em;
+    margin-bottom: 28px;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: 0.1s;
+}
+
+.details-divider {
+    height: 0.5px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 24px;
+}
+
+.details_right_desc {
+    margin-bottom: 24px;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: 0.2s;
+}
+
+.details_right_desc p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #888;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+}
+
+.details_right_price {
+    margin-bottom: 28px;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: 0.25s;
+}
+
+.details_right_price p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: #e8e6e0;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.price-note {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: 400;
+}
+
+.cart-link {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: 0.3s;
+}
+
+.add_to_cart_btn {
+    width: 100%;
+    padding: 17px 32px;
+    background: #e8e6e0;
+    color: #1a1a18;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.add_to_cart_btn:hover {
+    background: #ffffff;
+    transform: translateY(-1px);
+}
+
+.add_to_cart_btn:active {
+    transform: translateY(0);
+}
+
+.details-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: 0.35s;
+}
+
+.badge {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #888;
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-weight: 400;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.badge:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #c8c6c0;
+}
+
+.buyer-protection {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: #232320;
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 18px 20px;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: 0.4s;
+}
+
+.buyer-protection svg {
+    color: #7aab8a;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.protection-title {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c8c6c0;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.protection-desc {
+    font-size: 12px;
+    color: #666;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .details {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .details_left {
+        width: 100%;
+        position: static;
+    }
+
+    .details-section {
+        padding: 32px 20px;
+        align-items: flex-start;
+    }
+
+    .details-name {
+        font-size: 40px;
+    }
+}

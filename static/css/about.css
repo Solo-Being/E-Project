@@ -1,0 +1,157 @@
+.about-section {
+    padding-top: 32px;
+}
+
+.about-intro {
+    max-width: 680px;
+    margin: 0 auto 64px;
+    text-align: center;
+}
+
+.about-intro p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #7a7e88;
+    letter-spacing: 0.3px;
+}
+
+.about-blocks {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2e3035;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 48px;
+}
+
+.about-block {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #2e3035;
+    transition: background 0.2s;
+}
+
+.about-block:last-child {
+    border-bottom: none;
+}
+
+.about-block:hover {
+    background: #212428;
+}
+
+.about-year {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4a4e58;
+    padding: 32px;
+    border-right: 1px solid #2e3035;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 35px;
+    width: 140px;
+    flex-shrink: 0;
+}
+
+.about-content {
+    padding: 32px 40px;
+}
+
+.about-content h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #e2e2e2;
+    margin-bottom: 13px;
+    letter-spacing: 0.3px;
+}
+
+.about-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #7a7e88;
+}
+
+.about-values {
+    margin-bottom: 48px;
+}
+
+.about-values .section-label {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #5a5e68;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.values-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid #2e3035;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.value-card {
+    background: #212428;
+    padding: 32px 29px;
+    border-right: 1px solid #2e3035;
+    transition: background 0.2s;
+    flex: 1 1 200px;
+}
+
+.value-card:last-child {
+    border-right: none;
+}
+
+.value-card:hover {
+    background: #26292e;
+}
+
+.value-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #c8cad0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.value-desc {
+    font-size: 13px;
+    color: #5a5e68;
+    line-height: 1.7;
+}
+
+.about-closing {
+    text-align: center;
+    padding: 48px 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.about-closing p {
+    font-size: 16px;
+    color: #7a7e88;
+    letter-spacing: 0.3px;
+}
+
+.about-closing .btn-dark {
+    background: #e2e2e2;
+    color: #1c1e22;
+    padding: 11px 26px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: background 0.2s;
+}
+
+.about-closing .btn-dark:hover {
+    background: #fff;
+}

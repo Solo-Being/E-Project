@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}User_Register{% endblock title %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+
+<section class="page-header">
+    <p class="eyebrow">Join Chronex</p>
+    <h1>Create Account</h1>
+</section>
+
+<section class="section auth-section">
+    <div class="auth-wrapper">
+
+        <div class="auth-left">
+            <div class="watch-face">
+                <div class="watch-inner">
+                    <span class="w-brand">Chronex</span>
+                    <span class="w-time">10 : 10</span>
+                    <span class="w-sub">Automatic</span>
+                </div>
+            </div>
+            <p class="auth-tagline">Time well spent<br>starts here.</p>
+        </div>
+
+        <div class="auth-form-wrap">
+            <h2 class="auth-title">Sign Up</h2>
+            <p class="auth-sub">Create your Chronex account to start shopping.</p>
+
+            <form action="" method="post" class="auth-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Create Account" class="btn-dark submit-btn auth-submit">
+            </form>
+
+            <p class="auth-footer-text">
+                Already have an account? <a href="{% url 'Login' %}">Sign in</a>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}

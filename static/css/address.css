@@ -1,0 +1,182 @@
+
+.address {
+    background: #212428;
+    border: 1px solid #2e3035;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 760px;
+    margin: 0 auto 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.cart_head p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #e2e2e2;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin: 40px 0 24px;
+}
+
+.fl_name {
+    display: flex;
+    gap: 20px;
+}
+
+.f_name {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.a_input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.address_area {
+    display: flex;
+    gap: 20px;
+}
+
+.ad {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Labels */
+.address label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #5a5e68;
+}
+
+.address label span {
+    color: #8a5a5a !important;
+}
+
+.address input[type="text"],
+.address input[type="number"],
+.address select {
+    background: #1c1e22;
+    border: 1px solid #2e3035;
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-size: 13px;
+    color: #e2e2e2;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.address input::placeholder {
+    color: #3a3e48;
+}
+
+.address input:focus,
+.address select:focus {
+    border-color: #5a5e68;
+}
+
+.address select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235a5e68' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+}
+
+.address select option {
+    background: #1c1e22;
+    color: #e2e2e2;
+}
+
+/* Payment section */
+.payment {
+    border: 1px solid #2e3035;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-top: 6px;
+}
+
+.payment label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #5a5e68;
+}
+
+.payment input[type="radio"] {
+    accent-color: #c8cad0;
+    margin-right: 8px;
+}
+
+.cod {
+    font-size: 14px;
+    color: #e2e2e2;
+    font-weight: 500;
+}
+
+.payment p {
+    font-size: 12px;
+    color: #5a5e68;
+    margin-top: 6px;
+}
+
+.address .sign-up {
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    font-family: inherit;
+    background: #e2e2e2;
+    color: #1a1a18;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background 0.2s;
+}
+
+.address .sign-up:hover {
+    background: #c8cad0;
+}
+
+@media (max-width: 768px) {
+    .address {
+        padding: 24px;
+        margin: 0 16px 40px;
+    }
+
+    .fl_name,
+    .address_area {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .f_name,
+    .ad {
+        min-width: 0;
+    }
+
+    .address input[type="text"],
+    .address input[type="number"],
+    .address select {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}

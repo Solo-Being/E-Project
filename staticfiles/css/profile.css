@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #1a1a18;
+    color: #e8e6e0;
+    font-family: 'Jost', sans-serif;
+}
+
+
+.profile-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 56px 32px 80px;
+}
+
+.profile-header {
+    animation: fadeUp 0.5s ease both;
+}
+
+.profile-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: 400;
+    margin-bottom: 28px;
+}
+
+.profile-header-row {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.profile-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #232320;
+    border: 0.5px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.profile-avatar span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #e8e6e0;
+    line-height: 1;
+}
+
+.profile-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #e8e6e0;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.profile-email {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #555;
+    font-weight: 300;
+}
+
+.profile-divider {
+    height: 0.5px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 40px 0;
+}
+
+.profile-stats {
+    display: flex;
+    align-items: center;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: 0.1s;
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #e8e6e0;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.stat-label {
+    font-size: 9px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: 400;
+}
+
+.stat-divider {
+    width: 0.5px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-section {
+    animation: fadeUp 0.5s ease both;
+    animation-delay: 0.15s;
+}
+
+.section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #e8e6e0;
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-evenly;
+    padding: 20px 0;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.07);
+    transition: background 0.2s;
+}
+
+.order-row:first-child {
+    border-top: 0.5px solid rgba(255, 255, 255, 0.07);
+}
+
+.order-img-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #232320;
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+}
+
+.order-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.order-info {
+    flex: 1;
+}
+
+.order-brand {
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.order-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #e8e6e0;
+    margin-bottom: 4px;
+    line-height: 1.1;
+}
+
+.order-meta {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.08em;
+}
+
+.order-price-col {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.order-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #e8e6e0;
+}
+
+.order-status {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #7aab8a;
+    border: 0.5px solid rgba(122, 171, 138, 0.3);
+    border-radius: 20px;
+    padding: 3px 10px;
+}
+
+.empty-orders {
+    padding: 48px 0;
+    text-align: center;
+}
+
+.empty-orders p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.empty-orders a {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.empty-orders a:hover {
+    color: #e8e6e0;
+}
+
+.info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.info-item {
+    width: 50%;
+    padding: 20px 24px;
+    transition: background 0.2s;
+}
+
+.info-item:hover {
+    background: #232320;
+}
+
+.info-label {
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.info-val {
+    font-size: 15px;
+    font-weight: 400;
+    color: #e8e6e0;
+    letter-spacing: 0.02em;
+}
+
+
+.profile-actions {
+    display: flex;
+    gap: 12px;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: 0.25s;
+}
+
+.action-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 13px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    display: inline-block;
+    background: #e8e6e0;
+    color: #1a1a18;
+    border: 0.5px solid #e8e6e0;
+}
+
+.action-btn:hover {
+    background: #fff;
+}
+
+.action-btn--ghost {
+    background: transparent;
+    color: #888;
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.action-btn--ghost:hover {
+    background: #2e2e2b;
+    color: #e8e6e0;
+}
+
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    .profile-wrap {
+        padding: 32px 20px 64px;
+    }
+
+    .profile-name {
+        font-size: 32px;
+    }
+
+    .info-item {
+        width: 50%;
+    }
+
+    .order-img-wrap {
+        width: 64px;
+        height: 64px;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        text-align: center;
+    }
+}

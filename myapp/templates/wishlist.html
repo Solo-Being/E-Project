@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Products{% endblock title %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+
+<section class="page-header">
+    <h1>Your Wishlist</h1>
+</section>
+
+<section class="section">
+
+<div class="product-grid">
+        {% for i in product %}
+        <div class="product-card">
+            <div class="product-img">
+                <img src="{{ i.product.c_image.url }}" alt="{{ i.category }}">
+            </div>
+            <div class="product-info">
+                <p class="brand-tag">Chronex</p>
+                <h3>{{ i.product.category }}</h3>
+                <p class="product-desc">{{ i.product.c_desc }}</p>
+                <div class="card-footer">
+                    <span class="price">₹{{ i.product.c_price }}</span>
+                    <a href="{% url 'details' i.product.id %}">
+                        <button class="add-btn" aria-label="Add to cart">
+                            Buy Now
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="empty-state">
+            <p>No products available yet.</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    </section>
+
+{% endblock content %}
