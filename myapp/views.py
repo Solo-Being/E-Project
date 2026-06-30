@@ -169,7 +169,7 @@ def cart_decrement(request,id):
         cart_item.delete()
     return redirect('cart_page')
 
-@login_required
+@login_required(login_url='Login')
 def profile(request):
     profile, created = Profile.objects.get_or_create(user=request.user)
     order_item = Order.objects.filter(user=request.user)
