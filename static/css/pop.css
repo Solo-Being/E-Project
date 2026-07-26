@@ -1,6 +1,6 @@
 .parent {
     width: 100%;
-    height: 760px;
+    height: 100vh;
     border: 1px solid transparent;
     background-color: rgba(0, 0, 0, 0.6);
     display: flex;
@@ -8,9 +8,9 @@
     z-index: 103;
     position: fixed;
     top: 0;
+    left: 0;
     display: none;
 }
-
 .pop {
     max-width: 440px;
     width: 100%;
@@ -64,8 +64,8 @@
 }
 
 .success img {
-    width: 400px;
-    height: 220px;
+    max-width: 100%;
+    height: auto;
 }
 
 .success_p {
@@ -203,11 +203,12 @@
 @media screen and (max-width:450px) {
     .parent{
         width: 100%;
+        height: 100vh;
     }
     .pop {
-        height: 900px;
+        height: 100vh;
         margin-top: 0;
-        width: 320px;
+        width: 100%;
         border-radius: 0px;
     }
     .buttons{
