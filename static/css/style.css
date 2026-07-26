@@ -788,7 +788,7 @@ footer p {
     top: 0;
     right: 0;
     width: 280px;
-    height: 88%;
+    height: 75%;
     background-color: #2e3035;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.4);
     z-index: 1000;
@@ -826,7 +826,7 @@ footer p {
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    margin-top: 8px;
+    margin-top: 20px;
     transition: background-color 0.2s ease, padding-left 0.2s ease;
 }
 
