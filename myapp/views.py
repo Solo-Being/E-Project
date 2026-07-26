@@ -266,17 +266,17 @@ def address(request,id=None):
         }
 
         return render(request,'home.html',head)
-    return render(request,'Address.html',{'product_id': id})
+    return render(request,'address.html',{'product_id': id})
         
 def place_order(request, id=None):
     cart_item=Cart.objects.filter(user=request.user)
     if not cart_item.exists():
-        return render(request,'Cart.html',{'order_error':True})
+        return render(request,'cart.html',{'order_error':True})
         
     if id is not None:
-        return redirect('Address', id=id)
+        return redirect('address', id=id)
 
-    return redirect('Address')
+    return redirect('address')
 
 def  edit(request):
     profile, created = Profile.objects.get_or_create(user=request.user)
