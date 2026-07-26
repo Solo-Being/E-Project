@@ -274,9 +274,9 @@ def place_order(request, id=None):
         return render(request,'cart.html',{'order_error':True})
         
     if id is not None:
-        return redirect('address', id=id)
+        return redirect('Address', id=id)
 
-    return redirect('address')
+    return redirect('Address')
 
 def  edit(request):
     profile, created = Profile.objects.get_or_create(user=request.user)
