@@ -30,6 +30,14 @@ SECRET_KEY = os.environ.get(
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['.onrender.com', '127.0.0.1', 'localhost']
+SECRET_KEY = 'django-insecure-aruh3!b&t(mw6rch)43cnr+mhzv%jp5a4h^ki6=)zuuq0s6tbp'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+
+ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -119,6 +127,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
+
+import os
 
 STATIC_URL = 'static/'
 
