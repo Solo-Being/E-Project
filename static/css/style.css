@@ -1047,6 +1047,7 @@ footer p {
 }
 
 
+
 @media (max-width: 600px) {
 
     nav {
@@ -1158,4 +1159,10 @@ footer p {
     .search-area input {
         width: 85%;
     }
+}
+
+@media (max-width: 375px) {
+     .hero{
+        padding: 34px 42px;
+     }
 }
