@@ -1161,7 +1161,7 @@ footer p {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 425px) {
      .hero{
         padding: 34px 42px;
      }
