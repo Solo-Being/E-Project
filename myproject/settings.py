@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['chronex-cfut.onrender.com', '127.0.0.1', 'localhost']
 SECRET_KEY = 'django-insecure-aruh3!b&t(mw6rch)43cnr+mhzv%jp5a4h^ki6=)zuuq0s6tbp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
