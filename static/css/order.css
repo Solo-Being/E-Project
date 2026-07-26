@@ -1,0 +1,316 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.order-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 32px;
+}
+
+.order-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #777;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.order-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 400;
+    color: #e8e6e0;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+}
+
+.order-divider {
+    height: 0.5px;
+    background: rgba(255, 255, 255, 0.12);
+    margin-bottom: 32px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 28px 0;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.order-item-img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    background: #2a2a28;
+    flex-shrink: 0;
+}
+
+.order-item-info {
+    flex: 1;
+}
+
+.item-brand {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #666;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+.item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #e8e6e0;
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.item-desc {
+    font-size: 13px;
+    color: #666;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.item-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    width: fit-content;
+    font-weight: 400;
+}
+
+.status-confirmed {
+    border: 0.5px solid rgba(90, 158, 111, 0.4);
+    color: #5a9e6f;
+    background: rgba(90, 158, 111, 0.08);
+}
+
+.status-processing {
+    border: 0.5px solid rgba(200, 160, 80, 0.4);
+    color: #c8a050;
+    background: rgba(200, 160, 80, 0.08);
+}
+
+.status-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.item-qty {
+    font-size: 12px;
+    color: #666;
+    font-weight: 300;
+    margin-top: 8px;
+    letter-spacing: 0.06em;
+}
+
+.item-qty span {
+    color: #aaa;
+    font-weight: 400;
+}
+
+.item-price-col {
+    text-align: right;
+    min-width: 110px;
+    flex-shrink: 0;
+}
+
+.item-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: #e8e6e0;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.item-date {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.reorder-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 18px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: #2e2e2b;
+    color: #e8e6e0;
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+
+.reorder-btn:hover {
+    background: #3a3a36;
+}
+
+.order-summary {
+    margin-top: 32px;
+    padding: 24px;
+    background: #232320;
+    border-radius: 10px;
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-left p {
+    font-size: 12px;
+    color: #555;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.summary-left span {
+    font-size: 13px;
+    color: #888;
+}
+
+.summary-total-label {
+    font-size: 12px;
+    color: #666;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: right;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.summary-total-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #e8e6e0;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 96px 0;
+}
+
+.empty-icon {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.empty-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.empty-sub {
+    font-size: 13px;
+    color: #444;
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+
+.shop-btn {
+    display: inline-flex;
+    padding: 12px 28px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: transparent;
+    color: #e8e6e0;
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    transition: background 0.15s;
+}
+
+.shop-btn:hover {
+    background: #2e2e2b;
+}
+
+.order-block {
+    background: #1f1f1c;
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 28px;
+}
+
+.order-block .order-item:last-of-type {
+    border-bottom: none;
+}
+
+.order-block .order-summary {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.order-block .order-summary + .order-item {
+    border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+    margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+    .order-item {
+        flex-wrap: wrap;
+    }
+
+    .order-item-img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .item-price-col {
+        width: 100%;
+        text-align: left;
+    }
+
+    .order-title {
+        font-size: 36px;
+    }
+
+    .order-summary {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+
+    .summary-total-label {
+        text-align: center;
+    }
+}

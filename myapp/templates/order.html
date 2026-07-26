@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Orders{% endblock title %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/order.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+
+<div class="order-wrap">
+
+  <p class="order-eyebrow">Chronex · Your purchases</p>
+
+  <h1 class="order-title">
+    My Orders
+  </h1>
+
+  <div class="order-divider"></div>
+
+  {% if orders %}
+
+    {% for i in orders %}
+      <div class="order-block">
+
+        <div class="order-summary" style="margin-bottom: 20px;">
+
+          <div class="summary-left">
+            <p>Order #{{ i.id }}</p>
+            <p>{{ i.date_time|date:"d M Y, h:i A" }}</p>
+          </div>
+
+          <div>
+            <span class="summary-total-label">Total</span>
+            <span class="summary-total-val">
+              ₹{{ i.total }}
+            </span>
+          </div>
+
+        </div>
+
+        {% for item in i.items %}
+
+        <div class="order-item">
+
+          <img src="{{ item.product.c_image.url }}"
+               alt="{{ item.product.category }}"
+               class="order-item-img">
+
+          <div>
+
+            <p class="item-brand">
+              Chronex
+            </p>
+
+            <h3 class="item-name">
+              {{ item.product.category }}
+            </h3>
+
+            <p class="item-desc">
+              {{ item.product.c_desc }}
+            </p>
+
+            <div class="item-status status-confirmed">
+              <span class="status-dot"></span>
+              Confirmed
+            </div>
+
+            <p class="item-qty">
+              Quantity:
+              <span>{{ item.quantity }}</span>
+            </p>
+
+          </div>
+
+          <div class="item-price-col">
+
+            <span class="item-price">
+              ₹{{ item.product.c_price }}
+            </span>
+
+          </div>
+
+        </div>
+
+        {% endfor %}
+
+
+        {% if i.address %}
+
+        <div class="order-summary" style="margin-top: 15px; margin-bottom: 0;">
+
+          <div class="summary-left">
+
+            <p><strong>Delivery Address</strong></p>
+
+            <p>
+              {{ i.address.first_name }}
+              {{ i.address.last_name }}
+            </p>
+
+            <p>
+              {{ i.address.adress }}
+            </p>
+
+            <p>
+              {{ i.address.city }},
+              {{ i.address.state }}
+              - {{ i.address.pin_code }}
+            </p>
+
+            <p>
+              Phone: {{ i.address.phone }}
+            </p>
+
+          </div>
+
+        </div>
+
+        {% endif %}
+
+      </div>
+
+    {% endfor %}
+
+    <div class="order-summary">
+
+      <div class="summary-left">
+        <p>Total Orders</p>
+        <p>{{ count }} Orders</p>
+      </div>
+
+      <div>
+
+        <span class="summary-total-label">
+          Amount Spent
+        </span>
+
+        <span class="summary-total-val">
+          ₹{{ grand_total }}
+        </span>
+
+      </div>
+
+    </div>
+
+  {% else %}
+
+    <div class="empty-state">
+
+      <div class="empty-icon">◻</div>
+
+      <h2 class="empty-title">
+        No orders yet
+      </h2>
+
+      <p class="empty-sub">
+        Your confirmed purchases will appear here
+      </p>
+
+      <a href="{% url 'products' %}" class="shop-btn">
+        Browse Collection
+      </a>
+
+    </div>
+
+  {% endif %}
+
+</div>
+
+{% endblock content %}

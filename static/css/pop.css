@@ -1,0 +1,226 @@
+.parent {
+    width: 100%;
+    height: 760px;
+    border: 1px solid transparent;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    z-index: 103;
+    position: fixed;
+    top: 0;
+    display: none;
+}
+
+.pop {
+    max-width: 440px;
+    width: 100%;
+    height: 500px;
+    border: 1px solid #2e3035;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background-color: #212428;
+    border-radius: 12px;
+}
+
+.pop_top {
+    width: 100%;
+    height: 50px;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: end;
+}
+
+.pop_top_svg {
+    width: 50px;
+    height: 50px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.pop_top_svg:hover {
+    color: #e2e2e2;
+}
+
+.pop_top_svg svg {
+    width: 20px;
+    height: 20px;
+}
+
+.success {
+    width: 100px;
+    height: 100px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success img {
+    width: 400px;
+    height: 220px;
+}
+
+.success_p {
+    width: 100%;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.success_p a:first-child {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e2e2e2;
+}
+
+.success_p a:last-child {
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #5a5e68;
+    margin-top: 10px;
+}
+
+.success_svg {
+    width: 50px;
+    height: 50px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success_svg svg {
+    width: 30px;
+    height: 30px;
+    color: #c8cad0;
+}
+
+.buttons {
+    width: 100%;
+    height: 100px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button1 {
+    width: 180px;
+    height: 40px;
+    border: 1px solid #2e3035;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    color: #c8cad0;
+    gap: 5px;
+    transition: transform 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.button1 p {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.button1:hover {
+    transform: translateY(-2px);
+    border-color: #5a5e68;
+    color: #e2e2e2;
+}
+
+.bt_svg svg {
+    width: 20px;
+    height: 20px;
+}
+
+.button2 {
+    width: 170px;
+    height: 40px;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background-color: #e2e2e2;
+    color: #1c1e22;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.button2 p {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.button2:hover {
+    transform: translateY(-2px);
+    background-color: #c8cad0;
+}
+
+.bt_svg1 {
+    width: 25px;
+    height: 30px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pop_a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+@media screen and (max-width:400px) {
+    .button1 {
+        width: 150px;
+    }
+
+    .button1 p {
+        font-size: 11px;
+        font-weight: 600;
+    }
+
+    .button2 {
+        width: 130px;
+    }
+    .button2 p {
+        font-size: 11px;
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .parent{
+        width: 100%;
+    }
+    .pop {
+        height: 900px;
+        margin-top: 0;
+        width: 320px;
+        border-radius: 0px;
+    }
+    .buttons{
+        margin-top: 25px;
+    }
+    .success{
+        margin-top: 25px;
+    }
+    .success_p{
+        margin-top: 25px;
+        gap: 15px;
+    }
+    .success_svg{
+        margin-top: 15px;
+    }
+}

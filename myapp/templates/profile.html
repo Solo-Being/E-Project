@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+
+<div class="profile-wrap">
+
+  <div class="profile-header">
+    <p class="profile-eyebrow">Chronex · Account</p>
+    <div class="profile-header-row">
+      <div class="profile-avatar">
+        {% if profile.profile_image %}
+         <img src="{{ profile.profile_image.url }}" alt=""> 
+        {% else %}
+        <span>{{ request.user.username|first|upper }}</span>
+        {% endif %}
+      </div>
+      <div>
+        <h1 class="profile-name">{{ request.user.get_full_name|default:request.user.username }}</h1>
+        <p class="profile-email">{{ request.user.email }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-divider"></div>
+
+  <div class="profile-stats">
+    <div class="stat-item">
+      
+      <p class="stat-val">{{ count }}</p>
+      <p class="stat-label">Orders</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <p class="stat-val">{{ c_count }}</p>
+      <p class="stat-label">In Cart</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <p class="stat-val">{{ request.user.date_joined|date:"Y" }}</p>
+      <p class="stat-label">Member Since</p>
+    </div>
+  </div>
+
+  <div class="profile-divider"></div>
+
+  <div class="profile-section">
+    <h2 class="section-heading">Order History</h2>
+
+    {% if orders %}
+
+      {% for i in orders %}
+      <div class="order-block">
+
+        <div class="order-block-summary">
+          <div class="summary-left">
+            <p>Order #{{ i.id }}</p>
+            <p>{{ i.date_time|date:"d M Y, h:i A" }}</p>
+          </div>
+          <div>
+            <span class="summary-total-label">Total</span>
+            <span class="summary-total-val">₹{{ i.total }}</span>
+          </div>
+        </div>
+
+        {% for item in i.items %}
+        <div class="order-row">
+          <div class="order-img-wrap">
+            <img src="{{ item.product.c_image.url }}" alt="{{ item.product.category }}" class="order-img">
+          </div>
+          <div class="order-details">
+            <p class="order-brand">Chronex</p>
+            <h3 class="order-name">{{ item.product.category }}</h3>
+            <p class="order-meta">{{ item.product.c_desc }}</p>
+            <p class="order-meta">Qty · {{ item.quantity }}</p>
+          </div>
+          <div class="order-price-col">
+            <p class="order-price">₹{{ item.product.c_price }}</p>
+            <span class="order-status">Confirmed</span>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% if i.address %}
+        <div class="order-address">
+          <p class="order-address-label">Delivery Address</p>
+          <p class="order-address-text">
+            {{ i.address.first_name }} {{ i.address.last_name }}<br>
+            {{ i.address.adress }}<br>
+            {{ i.address.city }}, {{ i.address.state }} - {{ i.address.pin_code }}<br>
+            Phone: {{ i.address.phone }}
+          </p>
+        </div>
+        {% endif %}
+
+      </div>
+      {% endfor %}
+
+      <div class="order-block order-block--summary">
+        <div class="order-block-summary">
+          <div class="summary-left">
+            <p>Total Orders</p>
+            <p>{{ count }} Orders</p>
+          </div>
+          <div>
+            <span class="summary-total-label">Amount Spent</span>
+            <span class="summary-total-val">₹{{ grand_total }}</span>
+          </div>
+        </div>
+      </div>
+
+    {% else %}
+    <div class="empty-orders">
+      <p>No orders yet.</p>
+      <a href="{% url 'products' %}">Browse the collection →</a>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="profile-divider"></div>
+
+  <div class="profile-section">
+    <h2 class="section-heading">Account Details</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <p class="info-label">Username</p>
+        <p class="info-val">{{ request.user.username }}</p>
+      </div>
+      <div class="info-item">
+        <p class="info-label">Email</p>
+        <p class="info-val">{{ request.user.email|default:"—" }}</p>
+      </div>
+      <div class="info-item">
+        <p class="info-label">First Name</p>
+        <p class="info-val">{{ profile.first_name|default:"—" }}</p>
+      </div>
+      <div class="info-item">
+        <p class="info-label">Last Name</p>
+        <p class="info-val">{{ profile.last_name|default:"—" }}</p>
+      </div>
+      <div class="info-item">
+        <p class="info-label">Phone Number</p>
+        <p class="info-val">{{ profile.phone|default:"—" }}</p>
+      </div>
+      <div class="info-item">
+        <p class="info-label">Joined</p>
+        <p class="info-val">{{ request.user.date_joined|date:"d M Y" }}</p>
+      </div>
+      <div class="info-item">
+        <p class="info-label">Last Login</p>
+        <p class="info-val">{{ request.user.last_login|date:"d M Y" }}</p>
+      </div>
+      <div class="info-item info-item--full">
+        <p class="info-label">Bio</p>
+        <p class="info-val">{{ profile.bio|default:"—" }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-divider"></div>
+
+  <div class="profile-actions">
+    <a href="{% url 'edit' %}" class="action-btn">Edit Profile</a>
+    <a href="{% url 'cart_page' %}" class="action-btn action-btn--ghost">View Cart</a>
+    <a href="{% url 'wishlist' %}" class="action-btn action-btn--ghost">View wishlist</a>
+    <a href="{% url 'Logout' %}" class="action-btn action-btn--ghost">Sign Out</a>
+  </div>
+
+</div>
+
+{% endblock content %}

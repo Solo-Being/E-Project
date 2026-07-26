@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Our Story{% endblock title %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+
+<section class="page-header">
+    <p class="hero-eyebrow">Est. 2025 · Kerala, India</p>
+    <h1>Our Story</h1>
+</section>
+
+<section class="section about-section">
+
+    <div class="about-intro">
+        <p>
+            Chronex was born out of a simple belief — that a great watch should not be a privilege.
+            It should be accessible to anyone who understands the quiet language of time.
+        </p>
+    </div>
+
+    <div class="about-blocks">
+
+        <div class="about-block">
+            <p class="about-year">2025</p>
+            <div class="about-content">
+                <h3>The Beginning</h3>
+                <p>
+                    Founded in the heart of Kerala, Chronex started as a small passion project
+                    by a group of watch enthusiasts who were tired of choosing between quality
+                    and affordability. We set out to curate timepieces that carry craftsmanship
+                    without the unnecessary markup.
+                </p>
+            </div>
+        </div>
+
+        <div class="about-block">
+            <p class="about-year">Mission</p>
+            <div class="about-content">
+                <h3>What We Stand For</h3>
+                <p>
+                    Every watch in our collection is selected with a single question in mind —
+                    would we wear it ourselves? We work only with brands that respect their
+                    craft. No fast fashion. No disposable timepieces. Only watches built to
+                    outlast the trends.
+                </p>
+            </div>
+        </div>
+
+        <div class="about-block">
+            <p class="about-year">Today</p>
+            <div class="about-content">
+                <h3>Where We Are Now</h3>
+                <p>
+                    From a small curated catalogue to a growing community of watch lovers
+                    across India, Chronex continues to grow — one carefully chosen timepiece
+                    at a time. We believe that the right watch does more than tell time.
+                    It tells your story.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="about-values">
+        <p class="section-label">What Drives Us</p>
+        <div class="values-grid">
+            <div class="value-card">
+                <p class="value-title">Curation</p>
+                <p class="value-desc">Every piece is handpicked. We carry only what we believe in.</p>
+            </div>
+            <div class="value-card">
+                <p class="value-title">Honesty</p>
+                <p class="value-desc">No inflated prices. No false claims. Just good watches at fair value.</p>
+            </div>
+            <div class="value-card">
+                <p class="value-title">Craft</p>
+                <p class="value-desc">We celebrate the makers — the movements, the dials, the details.</p>
+            </div>
+            <div class="value-card">
+                <p class="value-title">Community</p>
+                <p class="value-desc">Chronex is more than a store. It is a space for people who love watches.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-closing">
+        <p>Thank you for being part of the Chronex story.</p>
+        <a href="{% url 'products' %}" class="btn-dark">Explore the Collection</a>
+    </div>
+
+</section>
+
+{% endblock content %}

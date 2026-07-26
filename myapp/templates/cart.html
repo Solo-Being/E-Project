@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+cart
+{% endblock title %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+<div class="cart-wrap">
+    <p class="cart-eyebrow">Chronex · Your selection</p>
+    <h1 class="cart-title">Your Cart</h1>
+    <div class="cart-divider"></div>
+
+    {% if item %}
+    <div class="cart-layout">
+
+        {% for i in item %}
+        <div class="cart-item">
+            <img src="{{ i.product.c_image.url }}" alt="{{ i.product.category }}" class="cart-item-img">
+            <div class="cart-item-right">
+                <div class="brand">
+                    <p class="item-brand">Chronex</p>
+                    <h3 class="item-name">{{ i.product.category }}</h3>
+                </div>
+                <div class="qty-control">
+                    <a href="{% url 'dec' i.id %}">
+                        <button class="qty-btn">-</button>
+                    </a>
+                    <span class="qty-num">{{ i.quantity }}</span>
+                    <a href="{% url 'inc' i.id %}">
+                        <button class="qty-btn">+</button>
+                    </a>
+                </div>
+                <p class="item-price">₹{{ i.product.c_price }}</p>
+                <div class="item-price-col">
+                    <a href="{% url 'placeOrder' i.id %}" class="item-remove">Buy Now</a>
+                    <a href="{% url 'removefc' i.id %}" class="item-remove item-remove--ghost">Remove</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+    <div class="summary-box">
+        <h3 class="summary-title">Order Summary</h3>
+        <div class="cart-divider"></div>
+        <div class="summary-row"><span>Items</span><span>{{ item|length }}</span></div>
+        <div class="summary-row"><span>Shipping</span><span class="complimentary">Complimentary</span></div>
+
+        {% for i in item %}
+        <div class="cart-summary-item">
+            <img src="{{ i.product.c_image.url }}" alt="{{ i.product.category }}" class="cart-summary-item-img">
+            <div>
+                <div class="summary-item-desc">
+                    <p class="summary-item-brand">Chronex</p>
+                    <h3 class="summary-item-name">{{ i.product.category }}</h3>
+                </div>
+            </div>
+            <div class="summary-item-price-col">
+                <p class="summary-item-price">₹{{ i.total_price }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="cart-divider"></div>
+        <div class="summary-row">
+            <span class="summary-total-label">Total</span>
+            <span class="summary-total-val">₹{{total}}</span>
+        </div>
+        <div class="checkout-btn">
+            <a href="{% url 'placeOrder' %}">
+                <button>Place order</button>
+            </a>
+        </div>
+    </div>
+
+    {% else %}
+    <div class="empty-state">
+        <h2>Your cart is empty</h2>
+        <p><a href="{% url 'products' %}">Browse our collection →</a></p>
+    </div>
+    {% endif %}
+
+</div>
+{% endblock content %}
