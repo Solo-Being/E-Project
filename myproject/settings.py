@@ -36,7 +36,6 @@ SECRET_KEY = 'django-insecure-aruh3!b&t(mw6rch)43cnr+mhzv%jp5a4h^ki6=)zuuq0s6tbp
 # Application definition
 
 INSTALLED_APPS = [
-    'cloudinary_storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
