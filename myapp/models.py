@@ -40,7 +40,7 @@ class Address(models.Model):
     alt_phone = models.BigIntegerField()
     adress=models.TextField(max_length=250)
     city=models.CharField(max_length=50)
-    pin_code=models.IntegerField(max_length=6)
+    pin_code=models.IntegerField()
     state=models.CharField(max_length=100)
     land_mark=models.TextField(max_length=250,null=True,blank=True)
     payment=models.CharField(default='COD')
@@ -54,8 +54,6 @@ class OrderItem(models.Model):
     order = models.ForeignKey(Order,on_delete=models.CASCADE)
     product = models.ForeignKey(Product,on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
-    
-from django.contrib.auth.models import User
     
 class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)

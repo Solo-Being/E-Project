@@ -35,8 +35,8 @@
 
       <div class="edit-avatar-row">
         <div class="edit-avatar-preview" id="avatarPreview">
-          {% if profile.image %}
-          <img src="{{ profile.image.url }}" alt="Profile picture" id="avatarImg">
+          {% if profile.profile_image %}
+          <img src="{{ profile.profile_image.url }}" alt="Profile picture" id="avatarImg">
           {% else %}
           <span id="avatarInitial">{{ request.user.username|first|upper }}</span>
           {% endif %}

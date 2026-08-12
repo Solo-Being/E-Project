@@ -100,7 +100,7 @@ from django.contrib.auth import logout
 
 def logout_view(request):
     logout(request)
-    messages.success(request,f'Successfully Logged Out!')
+    messages.success(request,'Successfully Logged Out!')
     return redirect('home')
 
 def about(request):
@@ -216,7 +216,6 @@ def address(request,id=None):
         address_obj.first_name=first_name
         address_obj.last_name=last_name
         address_obj.user=request.user
-        address_obj.user=request.user
         address_obj.phone=phone
         address_obj.alt_phone=alt_phone
         address_obj.adress=addres
@@ -291,7 +290,7 @@ def  edit(request):
             profile.profile_image = image 
         profile.save()
         return redirect('Profile')
-    return render(request,'edit.html')
+    return render(request,'edit.html', {'profile': profile})
 
 @login_required
 def wish(request,id):
